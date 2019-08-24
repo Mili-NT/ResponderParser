@@ -1,7 +1,7 @@
 import re
 import matplotlib.pyplot as plotter
 from os import getcwd, mkdir
-from os.path import isdir
+from os.path import isdir, isfile
 import datetime
 #
 # Made by: Mili
@@ -90,8 +90,8 @@ def session_data_visualization(identifier, resources, folderpath):
     elif identifier == 'nbsd':
         plotter.legend(title=title, loc="best", labels=labels)
     axesObject.axis('equal')
-    plotter.show()
     plotter.savefig(f"{folderpath}{savename}")
+    plotter.show()
 def sessions_main():
     folder = getcwd() + '\\' + 'RP_Session_Output\\'
     if isdir(folder) is True:
