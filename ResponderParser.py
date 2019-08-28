@@ -61,6 +61,8 @@ def session_file_proc(filename, folder):
                 if cleaned[4:12] == '[NBT-NS]':
                     workstring = cleaned.replace(' ', '').strip(lineinfo)[20:]
                     service_name = workstring.split('(service:')[1].replace(')', '')
+                    while service_name[0].isalpha() is False:
+                        service_name = service_name[1:]
                     if service_name not in service_dict.keys():
                         service_dict[service_name] = 1
                     else:
